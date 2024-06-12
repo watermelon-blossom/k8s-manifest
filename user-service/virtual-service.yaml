@@ -12,8 +12,10 @@ spec:
     - match:
         - uri:
             prefix: /
+#      rewrite:
+#        uri: /
       route:
         - destination:
             port:
               number: 8080
-            host: push-module-service.smartcity.svc.cluster.local
+            host: user-service-head.backend.svc.cluster.local
