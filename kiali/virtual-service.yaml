@@ -15,5 +15,5 @@ spec:
       route:
         - destination:
             port:
-              number: 8080
+              number: 20001
             host: kiali.istio-system.svc.cluster.local
