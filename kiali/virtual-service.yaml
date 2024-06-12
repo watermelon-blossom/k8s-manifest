@@ -2,20 +2,18 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: user-virtualservice
-  namespace: backend
+  namespace: istio-system
 spec:
   hosts:
     - "*"
   gateways:
-    - default-gateway
+    - istio-ingress/default-gateway
   http:
     - match:
         - uri:
-            prefix: /
-#      rewrite:
-#        uri: /
+            prefix: /kiali
       route:
         - destination:
             port:
               number: 8080
-            host: user-service-head.backend.svc.cluster.local
+            host: kiali.istio-system.svc.cluster.local
