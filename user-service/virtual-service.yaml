@@ -5,7 +5,7 @@ metadata:
   namespace: backend
 spec:
   hosts:
-    - "user-service"
+    - "*"
   gateways:
     - istio-ingress/default-gateway
   http:
